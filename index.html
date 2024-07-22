@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+
+    <link type="image/x-icon" sizes="16x16" rel="icon" href="./favicon.png">
+    
+
+    <style>
+        .container {
+    text-align: center;
+    padding: 170px 0;
+ }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        
+        <p id="demo" style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: large; color: rgb(3, 3, 3); font-weight:bolder;"></p>
+        
+        <button style=" background-color: gray; color: white; padding: 7px; ">Change Colour</button>
+        
+    </div>
+
+
+
+    <script>
+
+      
+
+        const btn = document.querySelector('button');
+
+      
+        const colors = [
+            {code: "rgb(255,255,255)", color:"White"},
+            {code: "rgb(255,0,0)", color:"Red"},
+            {code: "rgb(255,255,0)", color:"Yellow"},
+            {code: "rgb(0,128,0)", color:"Green"},
+            {code: "rgb(0,255,255)", color:"Cyan"},
+            {code: "rgb(255,218,185)", color:"Peach Puff"},
+            {code: "rgb(245,255,250)", color:"Mint Cream"},
+            {code: "rgb(192,192,192)", color:"Silver"},
+            {code: "rgb(128,0,0)", color:"Maroon"},
+            {code: "rgb(128,0,128)", color:"Purple"},
+            {code: "rgb(0,128,128)", color:"Teal"},
+            {code: "rgb(0,0,128)", color:"Navy"},
+            {code: "rgb(250,128,114)", color:"Salmon"},
+            {code: "rgb(255,165,0)", color:"Orange"},
+            {code: "rgb(255,105,180)", color:"HotPink"},
+            {code: "rgb(255,228,225)", color:"MistyRose"},
+            {code: "rgb(240,255,240)", color:"Honeydew"}
+        ]
+
+      //   when app starts first time
+        document.body.style.backgroundColor = colors[0].code;
+
+        document.getElementById('demo').innerHTML = "Background Color is : " + colors[0].color;
+
+       
+        // when user clicks on button
+        btn.addEventListener('click', () => {
+            let index = Math.floor(Math.random() * colors.length);
+
+            const rndCol = colors[index].code;
+            document.body.style.backgroundColor = rndCol;
+
+            // console.log(colorsArray.length)
+           
+            document.getElementById('demo').innerHTML = "Background Color is : " + colors[index].color;
+            
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
